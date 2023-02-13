@@ -1,23 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from "./logo.svg";
+// import "./App.css";
+
+import Main from "./Components/Main";
 
 function App() {
   return (
+    //One jsx element is retured by return statemet. Multiple element can not be used. But inside one element , It is posible to use multiple elements.
+    // example :
+    // <div>
+    //   <h1></h1>
+    //   <img/>
+    // </div>
+
+    // <> </> ==> This is a react fragment. It is used to wrap multiple elements and make them appere as one
+
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p>My name is shamal Aravinda</p>
+      <Main />
+      <Main />
+  
+      <Main>
+        <h5>Hello</h5>
+        <p>Hi friends</p>
+      </Main>
+
+      {/* We can acsess elements inside a component as children using props */}
+
+      <Main></Main>
+      <Main item1 ="aaaa" item2="bbb" item3="ccc"/>
+     
+
+      
+      {/* (shift + alt + down arrow) for duplicate a particular item */}
     </div>
   );
 }
