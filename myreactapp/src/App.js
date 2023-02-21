@@ -1,18 +1,14 @@
-// import logo from "./logo.svg";
-// import "./App.css";
-
 import { Fragment } from "react";
 import Main from "./Components/Main";
 import { details } from "./Data/Data";
 import { details1 } from "./Data/Data";
 import { details2 } from "./Data/Data";
-// import { details3 } from "./Data/Data";
 
- //data access ==> method 3
+//data access ==> method 3 ==> using a component
 const NewBlock = () => {
   return (
     <Fragment>
-      {details2.map((element, index) => {
+      {details2?.map((element, index) => {
         return (
           <Main
             key={index}
@@ -28,8 +24,7 @@ const NewBlock = () => {
 //--------------------------------------------------------------------------------------------------------------------
 
 function App() {
-
-  //data access ==> method 2
+  //data access ==> method 2 ==> using a new variable
   const myDetails1 = details1?.map((element, index) => {
     return (
       <Main
@@ -75,7 +70,6 @@ function App() {
 
       {/* //data access ==> method 3 */}
       <NewBlock />
-
 
       {/* <Main />
       <Main item1 ="aaaa" item2="bbb" item3="ccc"/>
