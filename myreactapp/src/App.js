@@ -1,50 +1,18 @@
 // import logo from "./logo.svg";
 // import "./App.css";
 
+import { Fragment } from "react";
 import Main from "./Components/Main";
+import { details } from "./Data/Data";
+import { details1 } from "./Data/Data";
+import { details2 } from "./Data/Data";
+// import { details3 } from "./Data/Data";
 
-const details = [
-  {
-    name: "Pasan",
-    position: "doctor",
-    city: "Galle",
-  },
-  {
-    name: "Nimali",
-    position: "teacher",
-    city: "Badulla",
-  },
-  {
-    name: "Selvaraja",
-    position: "shop owner",
-    city: "Trincomalee",
-  },
-  {
-    name: "Ruwan",
-    position: "ceo",
-    city: "colombo",
-  },
-];
-
-function App() {
+ //data access ==> method 3
+const NewBlock = () => {
   return (
-    //One jsx element is retured by return statemet. Multiple element can not be used. But inside one element , It is posible to use multiple elements.
-    // example :
-    // <div>
-    //   <h1></h1>
-    //   <img/>
-    // </div>
-
-    // <> </> ==> This is a react fragment. It is used to wrap multiple elements and make them appere as one
-
-    <div className="App">
-      <p>My name is shamal Aravinda</p>
-
-      <Main></Main>
-
-      {/* -----data accessing -> data in the same file----- */}
-
-      {details.map((element , index) => {
+    <Fragment>
+      {details2.map((element, index) => {
         return (
           <Main
             key={index}
@@ -54,6 +22,60 @@ function App() {
           />
         );
       })}
+    </Fragment>
+  );
+};
+//--------------------------------------------------------------------------------------------------------------------
+
+function App() {
+
+  //data access ==> method 2
+  const myDetails1 = details1?.map((element, index) => {
+    return (
+      <Main
+        key={index}
+        item1={element.name}
+        item2={element.position}
+        item3={element.city}
+      />
+    );
+  });
+  //--------------------------------------------------------------------------------------------------------------------
+  return (
+    //One jsx element is retured by return statemet. Multiple element can not be used. But inside one element , It is posible to use multiple elements.
+    // example :
+    // <div>
+    //   <h1></h1>
+    //   <img/>
+    // </div>
+
+    // <> </> ==> This is a jsx fragment. It is used to wrap multiple elements and make them appere as one
+    // <Fragment> <Fragment/> ==> This is a react fragment. It is used to wrap multiple elements and make them appere as one
+
+    <div className="App">
+      <p>My name is shamal Aravinda</p>
+
+      <Main></Main>
+
+      {/* //data access ==> method 1 */}
+      {details?.map((element, index) => {
+        // ? ==> check data empty or not. if empty map will be stoped
+        return (
+          <Main
+            key={index}
+            item1={element.name}
+            item2={element.position}
+            item3={element.city}
+          />
+        );
+      })}
+
+      {/* //data access ==> method 2 */}
+      {myDetails1}
+
+      {/* //data access ==> method 3 */}
+      <NewBlock />
+
 
       {/* <Main />
       <Main item1 ="aaaa" item2="bbb" item3="ccc"/>
