@@ -69,7 +69,7 @@ export const details2 = [
 
 export const details3 = [];
 //  The export default keyword is used if it needs to access whole things in the file simultaneously.
-// how to import export defalt ==> import finctionName from "file path";
+// how to import, export defalt ==> import finctionName from "file path";
 
 //  However, the export keyword is used if it needs to access things like objects, functions, and arrays one by one.
-// how to import export ==> import { nameOfTheImportItem } filepath";
+// how to import, export ==> import { nameOfTheImportItem } filepath";

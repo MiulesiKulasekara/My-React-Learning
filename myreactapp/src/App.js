@@ -1,40 +1,40 @@
 import { Fragment } from "react";
 import Main from "./Components/Main";
 import { details } from "./Data/Data";
-import { details1 } from "./Data/Data";
-import { details2 } from "./Data/Data";
+// import { details1 } from "./Data/Data";
+// import { details2 } from "./Data/Data";
 
 //data access ==> method 3 ==> using a component
-const NewBlock = () => {
-  return (
-    <Fragment>
-      {details2?.map((element, index) => {
-        return (
-          <Main
-            key={index}
-            item1={element.name}
-            item2={element.position}
-            item3={element.city}
-          />
-        );
-      })}
-    </Fragment>
-  );
-};
+// const NewBlock = () => {
+//   return (
+//     <Fragment>
+//       {details2?.map((element, index) => {
+//         return (
+//           <Main
+//             key={index}
+//             item1={element.name}
+//             item2={element.position}
+//             item3={element.city}
+//           />
+//         );
+//       })}
+//     </Fragment>
+//   );
+// };
 //--------------------------------------------------------------------------------------------------------------------
 
 function App() {
   //data access ==> method 2 ==> using a new variable
-  const myDetails1 = details1?.map((element, index) => {
-    return (
-      <Main
-        key={index}
-        item1={element.name}
-        item2={element.position}
-        item3={element.city}
-      />
-    );
-  });
+  // const myDetails1 = details1?.map((element, index) => {
+  //   return (
+  //     <Main
+  //       key={index}
+  //       item1={element.name}
+  //       item2={element.position}
+  //       item3={element.city}
+  //     />
+  //   );
+  // });
   //--------------------------------------------------------------------------------------------------------------------
   return (
     //One jsx element is retured by return statemet. Multiple element can not be used. But inside one element , It is posible to use multiple elements.
@@ -65,11 +65,11 @@ function App() {
         );
       })}
 
-      {/* //data access ==> method 2 */}
-      {myDetails1}
+      {/* //data access ==> method 2
+      {myDetails1} */}
 
-      {/* //data access ==> method 3 */}
-      <NewBlock />
+      {/* //data access ==> method 3
+      <NewBlock /> */}
 
       {/* <Main />
       <Main item1 ="aaaa" item2="bbb" item3="ccc"/>
